@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get("DEBUG"))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -46,9 +46,13 @@ INSTALLED_APPS = [
     #rest
     'rest_framework',
     'django_filters',
+    
 
     #apps
     'apps.cars',
+
+    #docs
+    'drf_yasg',
 ]
 
 REST_FRAMEWORK = {
