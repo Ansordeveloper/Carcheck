@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from apps.cars.models import Car, SpecialMarks, PeriodsOwnership
+from apps.cars.models import Car, SpecialMarks, PeriodsOwnership, CarPost
 
 @admin.register(Car)
 class CarAdmin(admin.ModelAdmin):
@@ -23,3 +23,10 @@ class PeriodsOwnershipAdmin(admin.ModelAdmin):
     list_filter = ['car','from_date','before_date','actual']
     list_per_page = 20
     search_fields = ['car__brand','from_date','before_date','actual']
+
+@admin.register(CarPost)
+class CarPostAdmin(admin.ModelAdmin):
+    list_display = ['brand', 'model', 'price']
+    list_filter = ['brand', 'model', 'price']
+    list_per_page = 20
+    search_fields = ['brand', 'model', 'price']
