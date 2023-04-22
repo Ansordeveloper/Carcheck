@@ -57,6 +57,9 @@ INSTALLED_APPS = [
 
     #docs
     'drf_yasg',
+
+    #cors
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -80,6 +83,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'core.urls'
+
+#cors config
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 TEMPLATES = [
     {
